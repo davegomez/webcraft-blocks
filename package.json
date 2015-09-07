@@ -1,0 +1,40 @@
+{
+  "name": "webcraft-blocks",
+  "version": "0.0.1",
+  "description": "Webcraft Blocks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:davegomez/webcraft-blocks.git"
+  },
+  "keywords": [
+    "javascript",
+    "web",
+    "components"
+  ],
+  "author": {
+    "name": "Tiago Wúst Frères",
+    "email": "tiagofreres@gmail.com",
+    "url": "https://github.com/tiagofreres"
+  },
+  "contributors": [
+    {
+      "name": "Camilo Orrego",
+      "email": "acornssn@gmail.com",
+      "url": "https://github.com/baldore"
+    },
+    {
+      "name": "David Gómez",
+      "email": "dg.dave@gmail.com",
+      "url": "https://github.com/davegomez"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davegomez/webcraft-blocks/issues"
+  },
+  "homepage": "https://github.com/davegomez/webcraft-blocks#readme"
+}
