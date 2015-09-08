@@ -36,5 +36,20 @@
   "bugs": {
     "url": "https://github.com/davegomez/webcraft-blocks/issues"
   },
-  "homepage": "https://github.com/davegomez/webcraft-blocks#readme"
+  "homepage": "https://github.com/davegomez/webcraft-blocks#readme",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.0.0",
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.17.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "html-webpack-plugin": "^1.6.1",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.3.2",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.10.1",
+    "webpack-merge": "^0.2.0"
+  }
 }
