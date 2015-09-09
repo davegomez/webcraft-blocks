@@ -8,9 +8,9 @@ const target = process.env.npm_lifecycle_event;
 const rootPath = path.resolve(__dirname);
 
 const common = {
-  entry: path.resolve(rootPath, 'main.js'),
+  entry: path.resolve(rootPath, 'lib/main.js'),
   output: {
-    path: path.resolve(rootPath, 'bin'),
+    path: path.resolve(rootPath, 'bin/js'),
     filename: 'main.js'
   },
   module: {
@@ -25,11 +25,11 @@ const common = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("bin/main.css", {
+    new ExtractTextPlugin("bin/css/main.css", {
       allChunks: true
     }),
     new HtmlWebpackPlugin({
-      title: 'Webcraft Blocks'
+      title: 'Webcraft'
     })
   ]
 };
@@ -42,7 +42,7 @@ if (target === 'start' || !target) {
         {
           test: /\.js?/,
           loaders: ['babel'],
-          include: path.resolve(rootPath, 'bin')
+          include: path.resolve(rootPath, 'bin/js')
         }
       ]
     },
