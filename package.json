@@ -1,55 +1,55 @@
 {
-  "name": "webcraft-blocks",
-  "version": "0.0.1",
-  "description": "Webcraft Blocks",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:davegomez/webcraft-blocks.git"
-  },
-  "keywords": [
-    "javascript",
-    "web",
-    "components"
-  ],
-  "author": {
-    "name": "Tiago Wúst Frères",
-    "email": "tiagofreres@gmail.com",
-    "url": "https://github.com/tiagofreres"
-  },
-  "contributors": [
-    {
-      "name": "Camilo Orrego",
-      "email": "acornssn@gmail.com",
-      "url": "https://github.com/baldore"
+    "name": "webcraft-blocks",
+    "version": "0.0.1",
+    "description": "Webcraft Blocks",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    {
-      "name": "David Gómez",
-      "email": "dg.dave@gmail.com",
-      "url": "https://github.com/davegomez"
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:davegomez/webcraft-blocks.git"
+    },
+    "keywords": [
+        "javascript",
+        "web",
+        "components"
+    ],
+    "author": {
+        "name": "Tiago Wúst Frères",
+        "email": "tiagofreres@gmail.com",
+        "url": "https://github.com/tiagofreres"
+    },
+    "contributors": [
+        {
+            "name": "Camilo Orrego",
+            "email": "acornssn@gmail.com",
+            "url": "https://github.com/baldore"
+        },
+        {
+            "name": "David Gómez",
+            "email": "dg.dave@gmail.com",
+            "url": "https://github.com/davegomez"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/davegomez/webcraft-blocks/issues"
+    },
+    "homepage": "https://github.com/davegomez/webcraft-blocks#readme",
+    "devDependencies": {
+        "autoprefixer-loader": "^3.0.0",
+        "babel-core": "^5.8.23",
+        "babel-loader": "^5.3.2",
+        "css-loader": "^0.17.0",
+        "extract-text-webpack-plugin": "^0.8.2",
+        "html-webpack-plugin": "^1.6.1",
+        "node-libs-browser": "^0.5.2",
+        "node-sass": "^3.3.2",
+        "sass-loader": "^2.0.1",
+        "style-loader": "^0.12.3",
+        "webpack": "^1.12.1",
+        "webpack-dev-server": "^1.10.1",
+        "webpack-merge": "^0.2.0"
     }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davegomez/webcraft-blocks/issues"
-  },
-  "homepage": "https://github.com/davegomez/webcraft-blocks#readme",
-  "devDependencies": {
-    "autoprefixer-loader": "^3.0.0",
-    "babel-core": "^5.8.23",
-    "babel-loader": "^5.3.2",
-    "css-loader": "^0.17.0",
-    "extract-text-webpack-plugin": "^0.8.2",
-    "html-webpack-plugin": "^1.6.1",
-    "node-libs-browser": "^0.5.2",
-    "node-sass": "^3.3.2",
-    "sass-loader": "^2.0.1",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.12.1",
-    "webpack-dev-server": "^1.10.1",
-    "webpack-merge": "^0.2.0"
-  }
 }
