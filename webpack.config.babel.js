@@ -6,6 +6,10 @@ const merge = require('webpack-merge');
 
 const target = process.env.npm_lifecycle_event;
 const rootPath = path.resolve(__dirname);
+const jsFiles = [
+        path.resolve(rootPath, 'lib/components'),
+        path.resolve(rootPath, 'lib/transformers')
+      ];
 
 const common = {
   entry: path.resolve(rootPath, 'lib/main.js'),
@@ -21,6 +25,16 @@ const common = {
           "css-loader?sourceMap" +
           "!autoprefixer-loader?browsers=last 2 version" +
           "!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents")
+      },
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        include: jsFiles
+      },
+      {
+        test: /\.js$/,
+        loader: "jscs-loader",
+        include: jsFiles
       }
     ]
   },
