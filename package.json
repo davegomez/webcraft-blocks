@@ -49,6 +49,7 @@
     "jscs": "^2.1.1",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.3.2",
+    "open-browser-webpack-plugin": "0.0.1",
     "sass-loader": "^2.0.1",
     "style-loader": "^0.12.3",
     "webpack": "^1.12.1",

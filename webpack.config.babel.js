@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
@@ -68,6 +69,7 @@ if (target === 'start' || !target) {
       port: 3000
     },
     plugins: [
+      new OpenBrowserPlugin({ url: 'http://localhost:3000/webpack-dev-server/' }),
       new webpack.HotModuleReplacementPlugin()
     ]
   });
