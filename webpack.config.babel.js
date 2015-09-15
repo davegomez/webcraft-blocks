@@ -57,7 +57,7 @@ if (target === 'start' || !target) {
         {
           test: /\.js?/,
           loaders: ['babel'],
-          include: path.resolve(rootPath, 'bin/js')
+          include: path.resolve(rootPath, 'lib')
         }
       ]
     },
