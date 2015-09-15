@@ -154,3 +154,6 @@ crashlytics-build.properties
 
 # sftp configuration file
 sftp-config.json
+
+# Webpack generated ignore
+bin/js/**/*.js
