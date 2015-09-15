@@ -7,15 +7,19 @@ const merge = require('webpack-merge');
 
 const target = process.env.npm_lifecycle_event;
 const rootPath = path.resolve(__dirname);
+const resolveRootPath = function(newPath) {
+  return path.resolve(__dirname, newPath);
+};
+
 const jsFiles = [
-        path.resolve(rootPath, 'lib/components'),
-        path.resolve(rootPath, 'lib/transformers')
-      ];
+  'lib/components',
+  'lib/transformers'
+].map(resolveRootPath);
 
 const common = {
-  entry: path.resolve(rootPath, 'lib/main.js'),
+  entry: resolveRootPath('lib/main.js'),
   output: {
-    path: path.resolve(rootPath, 'bin/js'),
+    path: resolveRootPath('bin/js'),
     filename: 'main.js'
   },
   module: {
@@ -57,7 +61,7 @@ if (target === 'start' || !target) {
         {
           test: /\.js?/,
           loaders: ['babel'],
-          include: path.resolve(rootPath, 'lib')
+          include: resolveRootPath('lib')
         }
       ]
     },
