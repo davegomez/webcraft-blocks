@@ -12,8 +12,8 @@ const resolveRootPath = function(newPath) {
 };
 
 const jsFiles = [
-  'lib/components',
-  'lib/transformers'
+  'lib/components/**/*.js',
+  'lib/transformers/**/*.js'
 ].map(resolveRootPath);
 
 const common = {
@@ -31,11 +31,11 @@ const common = {
           "!autoprefixer-loader?browsers=last 2 version" +
           "!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents")
       },
-      //{
-      //  test: /\.js$/,
-      //  loader: "eslint-loader",
-      //  include: jsFiles
-      //},
+      {
+       test: /\.js$/,
+       loader: "eslint-loader",
+       include: jsFiles
+      }
       //{
       //  test: /\.js$/,
       //  loader: "jscs-loader",
