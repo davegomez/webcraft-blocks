@@ -1,9 +1,8 @@
 /* eslint indent: 0 */
 
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
@@ -18,7 +17,7 @@ const common = {
   },
   output: {
     path: BIN,
-    filename: 'bundle.js'
+    filename: 'js/main.js'
   }
 };
 
@@ -44,21 +43,15 @@ if (TARGET === 'start' || !TARGET) {
         }
       ]
     },
-    devServer: {
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      progress: true,
-      port: 3000
-    },
     plugins: [
-      new OpenBrowserPlugin({ url: 'http://localhost:3000/webpack-dev-server/' }),
-      new webpack.HotModuleReplacementPlugin(),
       new ExtractTextPlugin('bin/css/main.css', {
         allChunks: true
       }),
-      new HtmlWebpackPlugin({
-        title: 'Webcraft'
+      new BrowserSyncPlugin({
+        host: 'localhost',
+        port: 3000,
+        server: { baseDir: ['./bin'] },
+        files: ['bin/*.html']
       })
     ]
   });
