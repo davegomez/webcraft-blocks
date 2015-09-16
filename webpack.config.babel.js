@@ -7,23 +7,28 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-const target = process.env.npm_lifecycle_event;
+const TARGET = process.env.npm_lifecycle_event;
 const resolveRootPath = function resolveRootPath(newPath) {
   return path.resolve(__dirname, newPath);
 };
 
-const jsFiles = [
-  'lib/components/**/*.js',
-  'lib/transformers/**/*.js'
-].map(resolveRootPath);
-
 const common = {
-  entry: resolveRootPath('lib/main.js'),
+  entry: resolveRootPath('lib'),
+  resolve: {
+    extensions: ['', '.js']
+  },
   output: {
-    path: resolveRootPath('bin/js'),
-    filename: 'main.js'
+    path: resolveRootPath('bin'),
+    filename: 'bundle.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js?$/,
+        loaders: ['eslint', 'jscs'],
+        include: resolveRootPath('lib')
+      }
+    ],
     loaders: [
       {
         test: /\.scss?$/,
@@ -31,17 +36,7 @@ const common = {
           'css-loader?sourceMap' +
           '!autoprefixer-loader?browsers=last 2 version' +
           '!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents')
-      },
-      {
-       test: /\.js$/,
-       loader: 'eslint-loader',
-       include: jsFiles
       }
-      //{
-      //  test: /\.js$/,
-      //  loader: 'jscs-loader',
-      //  include: jsFiles
-      //}
     ]
   },
   plugins: [
@@ -54,7 +49,7 @@ const common = {
   ]
 };
 
-if (target === 'start' || !target) {
+if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
     module: {
