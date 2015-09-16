@@ -202,7 +202,7 @@
     "object-shorthand": [2, "always"],
     "prefer-arrow-callback": 1,
     "prefer-const": 2,
-    "prefer-spread": 0,
+    "prefer-spread": 1,
     "prefer-reflect": 0,
     "prefer-template": 2,
     "require-yield": 2

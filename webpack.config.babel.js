@@ -8,7 +8,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 const target = process.env.npm_lifecycle_event;
-const resolveRootPath = function(newPath) {
+const resolveRootPath = function resolveRootPath(newPath) {
   return path.resolve(__dirname, newPath);
 };
 
