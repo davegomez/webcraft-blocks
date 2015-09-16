@@ -1,3 +1,5 @@
+/* eslint indent: 0 */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -6,7 +8,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 const target = process.env.npm_lifecycle_event;
-const rootPath = path.resolve(__dirname);
 const resolveRootPath = function(newPath) {
   return path.resolve(__dirname, newPath);
 };
@@ -26,25 +27,25 @@ const common = {
     loaders: [
       {
         test: /\.scss?$/,
-        loader: ExtractTextPlugin.extract("style-loader",
-          "css-loader?sourceMap" +
-          "!autoprefixer-loader?browsers=last 2 version" +
-          "!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents")
+        loader: ExtractTextPlugin.extract('style-loader',
+          'css-loader?sourceMap' +
+          '!autoprefixer-loader?browsers=last 2 version' +
+          '!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents')
       },
       {
        test: /\.js$/,
-       loader: "eslint-loader",
+       loader: 'eslint-loader',
        include: jsFiles
       }
       //{
       //  test: /\.js$/,
-      //  loader: "jscs-loader",
+      //  loader: 'jscs-loader',
       //  include: jsFiles
       //}
     ]
   },
   plugins: [
-    new ExtractTextPlugin("bin/css/main.css", {
+    new ExtractTextPlugin('bin/css/main.css', {
       allChunks: true
     }),
     new HtmlWebpackPlugin({
