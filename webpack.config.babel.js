@@ -8,56 +8,40 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 const TARGET = process.env.npm_lifecycle_event;
-const resolveRootPath = function resolveRootPath(newPath) {
-  return path.resolve(__dirname, newPath);
-};
+const LIB = path.resolve(__dirname, 'lib');
+const BIN = path.resolve(__dirname, 'bin');
 
 const common = {
-  entry: resolveRootPath('lib'),
+  entry: LIB,
   resolve: {
     extensions: ['', '.js']
   },
   output: {
-    path: resolveRootPath('bin'),
+    path: BIN,
     filename: 'bundle.js'
-  },
-  module: {
-    preLoaders: [
-      {
-        test: /\.js?$/,
-        loaders: ['eslint', 'jscs'],
-        include: resolveRootPath('lib')
-      }
-    ],
-    loaders: [
-      {
-        test: /\.scss?$/,
-        loader: ExtractTextPlugin.extract('style-loader',
-          'css-loader?sourceMap' +
-          '!autoprefixer-loader?browsers=last 2 version' +
-          '!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents')
-      }
-    ]
-  },
-  plugins: [
-    new ExtractTextPlugin('bin/css/main.css', {
-      allChunks: true
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Webcraft'
-    })
-  ]
+  }
 };
 
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
     module: {
+      preLoaders: [
+        { test: /\.js?$/, loaders: 'eslint', include: LIB },
+        { test: /\.js?$/, loaders: 'jscs-loader', include: LIB }
+      ],
       loaders: [
         {
           test: /\.js?/,
           loaders: ['babel'],
-          include: resolveRootPath('lib')
+          include: LIB
+        },
+        {
+          test: /\.scss?$/,
+          loader: ExtractTextPlugin.extract('style-loader',
+            'css-loader?sourceMap' +
+            '!autoprefixer-loader?browsers=last 2 version' +
+            '!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents')
         }
       ]
     },
@@ -70,7 +54,13 @@ if (TARGET === 'start' || !TARGET) {
     },
     plugins: [
       new OpenBrowserPlugin({ url: 'http://localhost:3000/webpack-dev-server/' }),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new ExtractTextPlugin('bin/css/main.css', {
+        allChunks: true
+      }),
+      new HtmlWebpackPlugin({
+        title: 'Webcraft'
+      })
     ]
   });
 }
