@@ -50,11 +50,11 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "jscs": "^2.1.1",
     "jscs-loader": "^0.2.0",
-    "node-libs-browser": "^0.5.2",
+    "node-libs-browser": "^0.5.3",
     "node-sass": "^3.3.2",
     "sass-loader": "^2.0.1",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.12.1",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2",
     "webpack-merge": "^0.2.0"
   }
 }
