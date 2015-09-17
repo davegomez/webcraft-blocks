@@ -1,9 +1,9 @@
 /* eslint indent: 0 */
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const webpack = require('webpack');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const merge = require('webpack-merge');
 
 const TARGET = process.env.npm_lifecycle_event;
