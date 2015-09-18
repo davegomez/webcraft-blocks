@@ -130,7 +130,7 @@
     "no-unused-vars": 2,
     "no-use-before-define": 2,
 
-    "callback-return": [2, ["callback", "cb", "next"]],
+    "callback-return": [1, ["callback", "cb", "next"]],
     "handle-callback-err": [2, "^(err|error|anySpecificError)$"],
     "no-mixed-requires": 2,
     "no-new-require": 2,
