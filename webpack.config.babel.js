@@ -7,7 +7,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const merge = require('webpack-merge');
 
 const TARGET = process.env.npm_lifecycle_event;
-const LIB = path.resolve(__dirname, 'lib');
+const LIB = path.resolve(__dirname, 'lib/src');
 const BIN = path.resolve(__dirname, 'bin');
 
 const common = {

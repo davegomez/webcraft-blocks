@@ -25,11 +25,11 @@ module.exports = function (config) {
     webpack: {
       module: {
         loaders: [{
-          test: /\.(js|jsx)$/, exclude: /(bower_components|node_modules)/,
+          test: /\.js$/, exclude: /(bower_components|node_modules)/,
           loader: 'babel-loader'
         }],
         postLoaders: [{
-          test: /\.(js|jsx)$/, exclude: /(node_modules|bower_components|tests)/,
+          test: /\.js$/, exclude: /(node_modules|bower_components|tests)/,
           loader: 'istanbul-instrumenter'
         }]
       }
