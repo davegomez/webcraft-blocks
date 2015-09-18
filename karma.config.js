@@ -24,10 +24,16 @@ module.exports = function (config) {
     },
     webpack: {
       module: {
-        loaders: [{
-          test: /\.js$/, exclude: /(bower_components|node_modules)/,
-          loader: 'babel-loader'
-        }],
+        loaders: [
+          {
+            test: /\.js$/, exclude: /(bower_components|node_modules)/,
+            loader: 'babel-loader'
+          },
+          {
+            test: /sinon.*\.js$/,
+            loader: "imports?define=>false"
+          }
+        ],
         postLoaders: [{
           test: /\.js$/, exclude: /(node_modules|bower_components|tests)/,
           loader: 'istanbul-instrumenter'
