@@ -156,4 +156,7 @@ crashlytics-build.properties
 sftp-config.json
 
 # Webpack generated ignore
-bin/
+bin/js
+
+# Coverage files
+build
