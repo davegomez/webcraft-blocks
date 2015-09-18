@@ -1,19 +1,20 @@
-var webpack = require('karma-webpack');
+const webpack = require('karma-webpack');
 
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
     frameworks: ['mocha'],
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      './node_modules/babel-core/browser-polyfill.js',
       'lib/tests/**/*.spec.js'
     ],
     plugins: [webpack, 'karma-mocha', 'karma-phantomjs-launcher', 'karma-coverage', 'karma-spec-reporter'],
-    browsers: [ 'PhantomJS' ],
+    browsers: ['PhantomJS'],
     preprocessors: {
       'lib/tests/**/*.spec.js': ['webpack'],
       'lib/src/**/*.js': ['webpack']
     },
-    reporters: [ 'spec', 'coverage' ],
+    reporters: ['spec', 'coverage'],
     coverageReporter: {
       dir: 'build/reports/coverage',
       reporters: [
@@ -31,7 +32,7 @@ module.exports = function (config) {
           },
           {
             test: /sinon.*\.js$/,
-            loader: "imports?define=>false"
+            loader: 'imports?define=>false'
           }
         ],
         postLoaders: [{
