@@ -13,9 +13,15 @@
   "disallowKeywords": ["with"],
   "disallowSpacesInsideObjectBrackets": null,
   "disallowImplicitTypeConversion": ["string"],
-  "disallowMultipleVarDecl": false,
 
   "safeContextKeyword": "that",
+
+  "jsDoc": {
+    "checkAnnotations": true,
+    "checkParamNames": true,
+    "requireParamTypes": true,
+    "checkTypes": true
+  },
 
   "excludeFiles": [
     "bin/**",
