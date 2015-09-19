@@ -15,6 +15,8 @@ var webpackPostprocessor = wallabyWebpack({
 module.exports = function () {
   return {
     files: [
+      { pattern: 'node_modules/phantomjs-polyfill/bind-polyfill.js', instrument: false },
+      { pattern: 'node_modules/babel-core/browser-polyfill.js', instrument: false },
       { pattern: 'lib/src/**/*.js', load: false }
     ],
 
@@ -23,7 +25,7 @@ module.exports = function () {
     ],
 
     preprocessors: {
-      '**/*.js': file => babel.transform(file.content, { sourceMap: true })
+      'lib/**/*.js': file => babel.transform(file.content, { sourceMap: true })
     },
 
     postprocessor: webpackPostprocessor,
