@@ -1,0 +1,10 @@
+@import "components/tileButton/tileButton";
+
+body {
+  background-color: #fff;
+  background: #432;
+
+&.no-bg {
+  color: #333;
+}
+}

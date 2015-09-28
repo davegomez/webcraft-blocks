@@ -24,9 +24,23 @@ const common = {
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
+    sasslint: {
+      configFile: './.sass-lint.yml',
+      emitError: true,
+      emitWarning: true,
+      failOnError: true
+    },
+    stats: {
+      children: false
+    },
     module: {
       preLoaders: [
-        { test: /\.js?$/, loaders: ['eslint', 'jscs'], include: LIB }
+        { test: /\.js?$/, loaders: ['eslint', 'jscs'], include: LIB },
+        {
+          test: /\s[a|c]ss$/,
+          loader: 'sasslint',
+          include: LIB
+        }
       ],
       loaders: [
         {
